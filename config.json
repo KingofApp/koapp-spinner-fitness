@@ -1,0 +1,22 @@
+{
+  "name": "Fitness Design",
+  "identifier": "koapp-spinner-fitness",
+  "description": {
+    "en-US" : "",
+    "es-ES" : ""
+  },
+  "version": "1.1.2",
+  "author": "King of App",
+  "category": [],
+  "price": 0,
+  "platforms": [
+    "fitness",
+    "ios",
+    "windows"
+  ],
+  "showOn": {
+    "market": true
+  },
+  "subscription": false,
+  "main": "spinners/koapp-spinner-fitness/koapp-spinner-fitness.html"
+}

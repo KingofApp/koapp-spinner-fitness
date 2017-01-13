@@ -1,0 +1,15 @@
+{
+  "name": "koapp-spinner-fitness",
+  "version": "1.0.0",
+  "description": "Fitness theme spinner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fitness",
+    "spinner"
+  ],
+  "author": "Jesús Mendoza",
+  "license": "ISC"
+}

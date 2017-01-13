@@ -1,0 +1,106 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/koa-behaviors/koa-spinner-behavior.html">
+
+<dom-module id="koapp-spinner-fitness">
+  <template strip-whitespace>
+    <style>
+      #spinnerContainer {
+        position: relative;
+        height: 100%;
+      }
+
+      #outter {
+        position: absolute;;
+        width: 116px;
+        height: 116px;
+        top: calc(50% - (116px / 2));
+        left: calc(50% - (116px / 2));
+        background-color: var(--outter-circle-bg-color, --primary-color);
+        opacity: .05;
+        border-radius: 50%;
+      }
+
+      #inner {
+        position: absolute;
+        width: 59px;
+        height: 59px;
+        background-color: var(--inner-circle-bg-color, --primary-color);
+        box-shadow: 0 2px 8px 0 var(--light-accent-color);
+        border-radius: 50%;
+        top: calc(50% - 29.5px);
+        left: calc(50% - 29.5px);
+      }
+
+      #inner::after {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 20px;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        border-radius: 50px;
+        animation: rotate 3s infinite;
+        transform-origin: 50% 0% 0;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+
+      #inner::before {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 15px;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        border-radius: 50px;
+        animation: rotate 1s infinite;
+        transform-origin: 50% 0% 0;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+
+      @keyframes rotate {
+        5% { transform: rotate(18deg); }
+        10% { transform: rotate(36deg); }
+        15% { transform: rotate(54deg); }
+        20% { transform: rotate(72deg); }
+        25% { transform: rotate(90deg); }
+        30% { transform: rotate(108deg); }
+        35% { transform: rotate(126deg); }
+        40% { transform: rotate(144deg); }
+        45% { transform: rotate(162deg); }
+        50% { transform: rotate(180deg); }
+        55% { transform: rotate(198deg); }
+        60% { transform: rotate(216deg); }
+        65% { transform: rotate(234deg); }
+        70% { transform: rotate(252deg); }
+        75% { transform: rotate(270deg); }
+        80% { transform: rotate(288deg); }
+        85% { transform: rotate(306deg); }
+        90% { transform: rotate(324deg); }
+        95% { transform: rotate(342deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+
+    <!-- write your template here -->
+    <div id="spinnerContainer" class-name="[[__computeContainerClasses(active, __coolingDown)]]">
+      <div id="outter"></div>
+
+      <div id="inner"></div>
+    </div>
+    <!-- end template -->
+  </template>
+
+  <script>
+    Polymer({
+      is: 'koapp-spinner-fitness',
+
+      behaviors: [
+        Polymer.KoaSpinnerBehavior
+      ]
+    });
+  </script>
+</dom-module>
